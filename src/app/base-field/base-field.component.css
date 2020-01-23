@@ -1,0 +1,23 @@
+.field-container {
+    display: flex;
+    padding: 5px;
+}
+.field-name-description {
+    flex: 25%;
+}
+.field-name {
+    margin: 0;
+    padding: 0;
+}
+.field-description {
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+.field-body {
+    flex: 75%;
+}
+:host ::ng-deep input,
+:host ::ng-deep select {
+    padding: 5px;
+}

@@ -1,0 +1,7 @@
+<app-base-field [name]="'Отправление'">
+    <select>
+        <option *ngFor="let parcelType of parcelTypes" [id]="parcelType.id">
+            {{parcelType.name}}
+        </option>
+    </select>
+</app-base-field>
