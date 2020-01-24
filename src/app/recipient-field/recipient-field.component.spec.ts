@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SurnameFieldComponent } from './surname-field.component';
+import { RecipientFieldComponent } from './recipient-field.component';
 
-describe('SurnameFieldComponent', () => {
-  let component: SurnameFieldComponent;
-  let fixture: ComponentFixture<SurnameFieldComponent>;
+describe('RecipientFieldComponent', () => {
+  let component: RecipientFieldComponent;
+  let fixture: ComponentFixture<RecipientFieldComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SurnameFieldComponent ]
+      declarations: [ RecipientFieldComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SurnameFieldComponent);
+    fixture = TestBed.createComponent(RecipientFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

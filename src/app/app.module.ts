@@ -7,8 +7,8 @@ import { WeightFieldComponent } from './weight-field/weight-field.component';
 import { ParcelTypeFieldComponent } from './parcel-type-field/parcel-type-field.component';
 import { ParcelSubtypeFieldComponent } from './parcel-subtype-field/parcel-subtype-field.component';
 import { IndexFieldComponent } from './index-field/index-field.component';
-import { SurnameFieldComponent } from './surname-field/surname-field.component';
 import { BaseFieldComponent } from './base-field/base-field.component';
+import { RecipientFieldComponent } from './recipient-field/recipient-field.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import { BaseFieldComponent } from './base-field/base-field.component';
     ParcelTypeFieldComponent,
     ParcelSubtypeFieldComponent,
     IndexFieldComponent,
-    SurnameFieldComponent,
-    BaseFieldComponent
+    BaseFieldComponent,
+    RecipientFieldComponent
   ],
   imports: [
     BrowserModule

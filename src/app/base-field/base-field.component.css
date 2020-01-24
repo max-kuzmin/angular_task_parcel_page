@@ -18,6 +18,7 @@
     flex: 75%;
 }
 :host ::ng-deep input,
-:host ::ng-deep select {
+:host ::ng-deep select,
+:host ::ng-deep textarea {
     padding: 5px;
 }
