@@ -1,4 +1,6 @@
 <app-base-field [name]="'Получатель'" [description]="'Фамилия или организация'">
-    <input type="text" [id]="valueInputId"/>
-    <input type="checkbox" [id]="isOrganizationInputId"><label [for]="isOrganizationInputId">Организация</label>
+    <input type="text" id="recipient_name" placeholder="ФАМИЛИЯ ПОЛУЧАТЕЛЯ ИЛИ ОРГАНИЗАЦИЯ"/>
+    <div>
+        <input type="checkbox" id="is_organization"><label for="is_organization">Организация</label>
+    </div>
 </app-base-field>

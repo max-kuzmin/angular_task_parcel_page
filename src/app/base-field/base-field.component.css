@@ -1,6 +1,6 @@
 .field-container {
     display: flex;
-    padding: 5px;
+    padding: 0.3em;
 }
 .field-name-description {
     flex: 25%;
@@ -16,9 +16,18 @@
 }
 .field-body {
     flex: 75%;
+    display: flex;
 }
 :host ::ng-deep input,
 :host ::ng-deep select,
-:host ::ng-deep textarea {
-    padding: 5px;
+:host ::ng-deep textarea,
+:host ::ng-deep button {
+    padding: 0.3em;
+    padding-left: 0.5em;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+}
+:host ::ng-deep .invalid-input {
+    background-color: #ffdddd;
 }

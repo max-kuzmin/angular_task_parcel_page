@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TrackingNumberFieldComponent } from './tracking-number-field/tracking-number-field.component';
@@ -9,6 +10,7 @@ import { ParcelSubtypeFieldComponent } from './parcel-subtype-field/parcel-subty
 import { IndexFieldComponent } from './index-field/index-field.component';
 import { BaseFieldComponent } from './base-field/base-field.component';
 import { RecipientFieldComponent } from './recipient-field/recipient-field.component';
+import { ParcelFormComponent } from './parcel-form/parcel-form.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { RecipientFieldComponent } from './recipient-field/recipient-field.compo
     ParcelSubtypeFieldComponent,
     IndexFieldComponent,
     BaseFieldComponent,
-    RecipientFieldComponent
+    RecipientFieldComponent,
+    ParcelFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

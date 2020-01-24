@@ -1,3 +1,6 @@
-<app-base-field [name]="'ШПИ'">
-    <input type="text"/>
+<app-base-field [formGroup]="form" [name]="'ШПИ'">
+    <input 
+        type="text" 
+        formControlName="value" 
+        [ngClass]="{'invalid-input': hasErrors()}"/>
 </app-base-field>

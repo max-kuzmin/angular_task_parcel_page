@@ -1,0 +1,12 @@
+.submit-button {
+    float: right;
+}
+button {
+    padding: 0.5em;
+    margin-top: 2em;
+    font-family: inherit;
+    font-size: inherit;
+}
+form {
+    margin: 2em;
+}
