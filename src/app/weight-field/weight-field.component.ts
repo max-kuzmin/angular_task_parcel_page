@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReusableForm, CreateProviders } from 'src/app/shared/ReusableForm';
 
-export interface IWeightFieldValues {
-  value: string;
+export class WeightFieldValues {
+  value: number = null;
 }
 
 @Component({
@@ -12,10 +12,10 @@ export interface IWeightFieldValues {
   styleUrls: ['./weight-field.component.css'],
   providers: CreateProviders(WeightFieldComponent)
 })
-export class WeightFieldComponent extends ReusableForm<IWeightFieldValues> {
+export class WeightFieldComponent extends ReusableForm<WeightFieldValues> {
   constructor(formBuilder: FormBuilder) {
     super(formBuilder, {
-      value: ['', [
+      value: [null, [
         Validators.required,
         Validators.min(1)]]
     });

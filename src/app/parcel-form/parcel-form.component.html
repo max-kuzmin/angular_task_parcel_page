@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <app-tracking-number-field formControlName="trackingNumber"></app-tracking-number-field>
     <app-weight-field formControlName="weight"></app-weight-field>
-    <app-parcel-type-field formControlName="parcelType" [isInternational]="false" [weight]="value.weight ? value.weight.value : 0"></app-parcel-type-field>
+    <app-parcel-type-field formControlName="parcelType" [isInternational]="value.trackingNumber.isInternational" [weight]="value.weight.value"></app-parcel-type-field>
     <app-index-field formControlName="index"></app-index-field>
     <app-recipient-field formControlName="recipient"></app-recipient-field>
     <button type="submit" class="submit-button" [disabled]="!form.valid">Сохранить</button>

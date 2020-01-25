@@ -5,9 +5,9 @@ import { ParcelType } from '../models/ParcelType';
 import { RestApiService } from '../shared/RestApiService';
 import { ParcelSubtype } from '../models/ParcelSubtype';
 
-export interface IParcelTypeFieldValues {
-  typeId: number;
-  subTypeId: number;
+export class ParcelTypeFieldValues {
+  typeId: number = null;
+  subTypeId: number = null;
 }
 
 @Component({
@@ -16,9 +16,9 @@ export interface IParcelTypeFieldValues {
   styleUrls: ['./parcel-type-field.component.css'],
   providers: CreateProviders(ParcelTypeFieldComponent)
 })
-export class ParcelTypeFieldComponent extends ReusableForm<IParcelTypeFieldValues> implements OnInit {
-  @Input() weight: number = 0;
-  @Input() isInternational: boolean = false;
+export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues> implements OnInit {
+  @Input() weight: number;
+  @Input() isInternational: boolean;
   private allTypes: ParcelType[];
 
   constructor(
@@ -26,9 +26,22 @@ export class ParcelTypeFieldComponent extends ReusableForm<IParcelTypeFieldValue
     private restApi: RestApiService
   ) {
     super(formBuilder, {
-      typeId: ['', Validators.required],
-      subTypeId: ['', Validators.required]
+      typeId: [null, Validators.required],
+      subTypeId: []
     });
+
+    this.form.controls.typeId.valueChanges.subscribe(value => {
+      if (this.isInternational) {
+        this.form.controls.subTypeId.clearValidators();
+      }
+      else {
+        this.form.controls.subTypeId.setValidators(Validators.required);
+      }
+    })
+  }
+
+  ngOnChanges() {
+    this.value = new ParcelTypeFieldValues();
   }
 
   private get typeInvalid() {
@@ -39,6 +52,7 @@ export class ParcelTypeFieldComponent extends ReusableForm<IParcelTypeFieldValue
   private get subTypeInvalid() {
     return this.form.controls.subTypeId.touched
       && this.form.controls.subTypeId.invalid
+      && this.currentType
       && this.currentType.subtypes;
   }
 
