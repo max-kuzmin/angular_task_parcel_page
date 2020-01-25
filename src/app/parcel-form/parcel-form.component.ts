@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Parcel } from '../models/Parcel';
 
 @Component({
   selector: 'app-parcel-form',
@@ -14,10 +15,13 @@ export class ParcelFormComponent {
       trackingNumber: [],
       weight: [],
       parcelType: [],
-      parcelSubtype: [],
       index: [],
       recipient: [{value: '', isOrganization: false}]
     });
+  }
+
+  get value(): Parcel {
+    return this.form.value;
   }
 
   submit() {
