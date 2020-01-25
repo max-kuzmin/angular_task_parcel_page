@@ -2,22 +2,27 @@
     display: flex;
     padding: 0.3em;
 }
+
 .field-name-description {
     flex: 25%;
 }
+
 .field-name {
     margin: 0;
     padding: 0;
 }
+
 .field-description {
     color: gray;
     margin: 0;
     padding: 0;
 }
+
 .field-body {
     flex: 75%;
     display: flex;
 }
+
 :host ::ng-deep input,
 :host ::ng-deep select,
 :host ::ng-deep textarea,
@@ -28,6 +33,7 @@
     font-size: inherit;
     flex: 1;
 }
+
 :host ::ng-deep .invalid-input {
     background-color: #ffdddd;
 }
