@@ -1,7 +1,0 @@
-<app-base-field [formGroup]="form" [name]="'Тип'">
-    <select formControlName="value" [ngClass]="{'invalid-input': invalid}">
-        <option *ngFor="let parcelSubType of parcelSubTypes" [value]="parcelSubType.id">
-            {{parcelSubType.name}}
-        </option>
-    </select>
-</app-base-field>

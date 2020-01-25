@@ -1,7 +1,16 @@
-<app-base-field [formGroup]="form" [name]="'Отправление'">
-    <select formControlName="value" [ngClass]="{'invalid-input': invalid}">
-        <option *ngFor="let parcelType of parcelTypes" [value]="parcelType.id">
-            {{parcelType.name}}
-        </option>
-    </select>
-</app-base-field>
+<div [formGroup]="form">
+    <app-base-field [name]="'Отправление'">
+        <select formControlName="typeId" [ngClass]="{'invalid-input': typeInvalid}">
+            <option *ngFor="let parcelType of avaliableTypes" [value]="parcelType.id">
+                {{parcelType.name}}
+            </option>
+        </select>
+    </app-base-field>
+    <app-base-field [name]="'Тип'" [hidden]="!currentType || !currentType.subtypes">
+        <select formControlName="subTypeId" [ngClass]="{'invalid-input': subTypeInvalid}">
+            <option *ngFor="let parcelSubtype of avaliableSubtypes" [value]="parcelSubtype.id">
+                {{parcelSubtype.name}}
+            </option>
+        </select>
+    </app-base-field>
+</div>
