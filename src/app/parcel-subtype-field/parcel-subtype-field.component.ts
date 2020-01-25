@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ReusableForm, CreateProviders } from 'src/app/models/ReusableForm';
+import { ReusableForm, CreateProviders } from 'src/app/shared/ReusableForm';
 import { ParcelSubType } from '../models/ParcelSubType';
 
 export interface IParcelSubTypeFieldValues {

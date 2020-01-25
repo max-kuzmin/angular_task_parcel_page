@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ReusableForm, CreateProviders } from 'src/app/models/ReusableForm';
+import { ReusableForm, CreateProviders } from 'src/app/shared/ReusableForm';
 
 export interface IRecipientFieldValues {
   value: string;
