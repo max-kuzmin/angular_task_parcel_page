@@ -1,3 +1,6 @@
-<app-base-field [name]="'Вес в граммах'">
-    <input type="number"/>
+<app-base-field [formGroup]="form" [name]="'Вес в граммах'">
+    <input 
+        type="number"
+        formControlName="value"
+        [ngClass]="{'invalid-input': invalid}"/>
 </app-base-field>

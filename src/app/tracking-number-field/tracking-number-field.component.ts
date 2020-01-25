@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ReusableForm, CreateProviders } from 'src/app/models/ReusableForm';
 
 export interface ITrackingNumberFieldValues {
@@ -16,13 +13,11 @@ export interface ITrackingNumberFieldValues {
   providers: CreateProviders(TrackingNumberFieldComponent)
 })
 export class TrackingNumberFieldComponent extends ReusableForm<ITrackingNumberFieldValues> {
-  hasErrors() {
-    return this.form.controls.value.touched && this.form.controls.value.hasError('required')
-  }
-
   constructor(formBuilder: FormBuilder) {
     super(formBuilder, {
-      value: ['', Validators.required]
+      value: ['', [
+        Validators.required,
+        Validators.pattern("(^[A-Z]{2}\\d{9}[A-Z]{2}$)|(^\\d{14}$)")]]
     });
   }
 

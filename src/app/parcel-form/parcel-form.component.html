@@ -1,9 +1,9 @@
-<form [formGroup]="parcelForm" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()">
     <app-tracking-number-field formControlName="trackingNumber"></app-tracking-number-field>
-<!--    <app-weight-field></app-weight-field>
-    <app-parcel-type-field [parcelTypes]="[{id: '0', name: 'Посылки'}]"></app-parcel-type-field>
-    <app-parcel-subtype-field [parcelSubTypes]="[{id: '0', name: 'Посылка стандарт'}]"></app-parcel-subtype-field>
-    <app-index-field></app-index-field>
-    <app-recipient-field></app-recipient-field>-->
-    <button type="submit" class="submit-button" [disabled]="!parcelForm.valid">Сохранить</button>
+    <app-weight-field formControlName="weight"></app-weight-field>
+    <app-parcel-type-field formControlName="parcelType" [parcelTypes]="[{id: '0', name: 'Посылки'}]"></app-parcel-type-field>
+    <app-parcel-subtype-field formControlName="parcelSubtype" [parcelSubTypes]="[{id: '0', name: 'Посылка стандарт'}]"></app-parcel-subtype-field>
+    <app-index-field formControlName="index"></app-index-field>
+    <app-recipient-field formControlName="recipient"></app-recipient-field>
+    <button type="submit" class="submit-button" [disabled]="!form.valid">Сохранить</button>
 </form>

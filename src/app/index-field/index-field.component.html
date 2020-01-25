@@ -1,6 +1,8 @@
-<app-base-field [name]="'Индекс получателя'">
+<app-base-field [formGroup]="form" [name]="'Индекс получателя'">
     <textarea
         rows="2"
         placeholder="ВВЕДИТЕ ИНДЕКС
-АДРЕС - ЕСЛИ ИНДЕКС НЕИЗВЕСТЕН"></textarea>
+АДРЕС - ЕСЛИ ИНДЕКС НЕИЗВЕСТЕН"
+        formControlName="value"
+        [ngClass]="{'invalid-input': invalid}"></textarea>
 </app-base-field>

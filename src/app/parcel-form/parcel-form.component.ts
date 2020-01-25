@@ -1,30 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-parcel-form',
   templateUrl: './parcel-form.component.html',
   styleUrls: ['./parcel-form.component.css']
 })
-export class ParcelFormComponent implements OnInit {
-  parcelForm: FormGroup;
+export class ParcelFormComponent {
+  form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    this.parcelForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       trackingNumber: [],
-      /*weight: [],
+      weight: [],
       parcelType: [],
-      parcelSubType: [],
+      parcelSubtype: [],
       index: [],
-      recipient: []*/
+      recipient: [{value: '', isOrganization: false}]
     });
   }
 
-  ngOnInit() {
-  }
-
   submit() {
-    console.log(this.parcelForm.value);
+    console.log(this.form.value);
   }
 
 }
