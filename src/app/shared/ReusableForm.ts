@@ -28,7 +28,7 @@ export class ReusableForm<T> implements ControlValueAccessor, OnDestroy {
   get invalid() {
     return this.form.controls.value.touched && this.form.controls.value.invalid;
   }
-  
+
   get value(): T {
     return this.form.value;
   }

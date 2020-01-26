@@ -18,11 +18,11 @@ describe('AppComponent', () => {
         BaseFieldComponent,
         ParcelFormComponent,
         TrackingNumberFieldComponent,
-        WeightFieldComponent, 
+        WeightFieldComponent,
         ParcelTypeFieldComponent,
         IndexFieldComponent,
         RecipientFieldComponent],
-        imports: [ ReactiveFormsModule, HttpClientModule ]
+      imports: [ReactiveFormsModule, HttpClientModule]
     }).compileComponents();
   }));
 

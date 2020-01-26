@@ -8,8 +8,8 @@ export class TrackingNumberFieldValues {
   isInternational: boolean = null;
 }
 
-const internationalPattern: string = "^[A-Z]{2}\\d{9}[A-Z]{2}$";
-const localPattern: string = "^\\d{14}$";
+const internationalPattern = '^[A-Z]{2}\\d{9}[A-Z]{2}$';
+const localPattern = '^\\d{14}$';
 
 @Component({
   selector: 'app-tracking-number-field',

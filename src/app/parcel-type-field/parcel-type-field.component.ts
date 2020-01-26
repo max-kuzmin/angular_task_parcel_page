@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReusableForm, CreateProviders } from 'src/app/shared/ReusableForm';
 import { ParcelType } from '../models/ParcelType';
@@ -16,7 +16,7 @@ export class ParcelTypeFieldValues {
   styleUrls: ['./parcel-type-field.component.css'],
   providers: CreateProviders(ParcelTypeFieldComponent)
 })
-export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues> implements OnInit {
+export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues> implements OnInit, OnChanges {
   @Input() weight: number;
   @Input() isInternational: boolean;
   private allTypes: ParcelType[];
@@ -33,11 +33,10 @@ export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues
     this.form.controls.typeId.valueChanges.subscribe(value => {
       if (this.isInternational) {
         this.form.controls.subTypeId.clearValidators();
-      }
-      else {
+      } else {
         this.form.controls.subTypeId.setValidators(Validators.required);
       }
-    })
+    });
   }
 
   ngOnChanges() {
@@ -65,7 +64,7 @@ export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues
   private get avaliableTypes(): ParcelType[] {
     return this.allTypes
       ? this.allTypes.filter((value, index, array) =>
-        value.isInternational == this.isInternational && value.maxWeight >= this.weight)
+        value.isInternational === this.isInternational && value.maxWeight >= this.weight)
       : null;
   }
 
@@ -77,7 +76,7 @@ export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues
   }
 
   ngOnInit(): void {
-    this.restApi.getParcelTypes().subscribe(data => { this.allTypes = data });
+    this.restApi.getParcelTypes().subscribe(data => { this.allTypes = data; });
   }
 
 }

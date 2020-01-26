@@ -4,7 +4,7 @@ import { ReusableForm, CreateProviders } from 'src/app/shared/ReusableForm';
 
 export class RecipientFieldValues {
   value: string = null;
-  isOrganization: boolean = false;
+  isOrganization = false;
 }
 
 @Component({

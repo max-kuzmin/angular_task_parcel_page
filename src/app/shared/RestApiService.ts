@@ -18,22 +18,22 @@ export class RestApiService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }
+  };
 
   getParcelTypes(): Observable<ParcelType[]> {
     return this.http.get<ParcelType[]>(this.apiURL + '/parceltypes')
       .pipe(
         retry(3),
         catchError(this.handleError)
-      )
+      );
   }
 
   createParcel(value): Observable<Parcel> {
     return this.http.post<Parcel>(this.apiURL + '/parcel', JSON.stringify(value), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
   }
 
   private handleError(error) {

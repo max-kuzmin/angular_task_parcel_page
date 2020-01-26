@@ -16,17 +16,17 @@ describe('ParcelFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
         ParcelFormComponent,
         BaseFieldComponent,
         TrackingNumberFieldComponent,
-        WeightFieldComponent, 
+        WeightFieldComponent,
         ParcelTypeFieldComponent,
         IndexFieldComponent,
         RecipientFieldComponent],
-        imports: [ ReactiveFormsModule, HttpClientModule ]
+      imports: [ReactiveFormsModule, HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
