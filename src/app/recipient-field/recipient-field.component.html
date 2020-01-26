@@ -1,11 +1,10 @@
 <app-base-field [formGroup]="form" [name]="'Получатель'" [description]="'Фамилия или организация'">
     <input 
         type="text"
-        id="recipient_name"
         placeholder="ФАМИЛИЯ ПОЛУЧАТЕЛЯ ИЛИ ОРГАНИЗАЦИЯ"
         formControlName="value"
         [ngClass]="{'invalid-input': invalid}"/>
-    <div>
+    <div class="is-organization-container">
         <input
             type="checkbox"
             id="isOrganization"

@@ -1,12 +1,15 @@
-.submit-button {
-    float: right;
-}
 button {
     padding: 0.5em;
     margin-top: 2em;
     font-family: inherit;
     font-size: inherit;
+    margin-left: auto;
+    margin-right: 0.3em;
+    display:block;
 }
 form {
     margin: 2em;
+    padding: 2em;
+    border: #0096FF;
+    border-style: solid;
 }

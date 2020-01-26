@@ -32,6 +32,8 @@
     font-family: inherit;
     font-size: inherit;
     flex: 1;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 :host ::ng-deep .invalid-input {
