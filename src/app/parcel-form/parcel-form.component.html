@@ -4,5 +4,5 @@
     <app-parcel-type-field formControlName="parcelType" [isInternational]="value.trackingNumber.isInternational" [weight]="value.weight.value"></app-parcel-type-field>
     <app-index-field formControlName="index"></app-index-field>
     <app-recipient-field formControlName="recipient"></app-recipient-field>
-    <button type="submit" class="submit-button" [disabled]="!form.valid">Сохранить</button>
+    <button type="submit" class="submit-button" [hidden]="!form.valid">Сохранить</button>
 </form>

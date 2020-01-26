@@ -6,6 +6,7 @@ import { WeightFieldValues } from '../weight-field/weight-field.component';
 import { ParcelTypeFieldValues } from '../parcel-type-field/parcel-type-field.component';
 import { IndexFieldValues } from '../index-field/index-field.component';
 import { RecipientFieldValues } from '../recipient-field/recipient-field.component';
+import { RestApiService } from '../shared/RestApiService';
 
 @Component({
   selector: 'app-parcel-form',
@@ -15,7 +16,9 @@ import { RecipientFieldValues } from '../recipient-field/recipient-field.compone
 export class ParcelFormComponent {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private restApi: RestApiService) {
     this.form = this.formBuilder.group({
       trackingNumber: [new TrackingNumberFieldValues()],
       weight: [new WeightFieldValues()],
@@ -30,7 +33,9 @@ export class ParcelFormComponent {
   }
 
   submit() {
-    console.log(this.form.value);
+    this.restApi
+      .createParcel(this.value)
+      .subscribe(value => this.form.reset());
   }
 
 }

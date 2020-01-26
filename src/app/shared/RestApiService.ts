@@ -3,6 +3,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ParcelType } from '../models/ParcelType';
 import { Injectable } from '@angular/core';
+import { Parcel } from '../models/Parcel';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,17 @@ export class RestApiService {
   getParcelTypes(): Observable<ParcelType[]> {
     return this.http.get<ParcelType[]>(this.apiURL + '/parceltypes')
       .pipe(
-        retry(1),
+        retry(3),
         catchError(this.handleError)
       )
+  }
+
+  createParcel(value): Observable<Parcel> {
+    return this.http.post<Parcel>(this.apiURL + '/parcel', JSON.stringify(value), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
   private handleError(error) {
@@ -34,7 +43,6 @@ export class RestApiService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
     return throwError(errorMessage);
   }
 }

@@ -1,59 +1,59 @@
 {
-    "parceltypes": [
+  "parceltypes": [
+    {
+      "id": 0,
+      "name": "Посылка",
+      "isInternational": false,
+      "maxWeight": 20000,
+      "subtypes": [
         {
-            "id": 0,
-            "name": "Посылка",
-            "isInternational": false,
-            "maxWeight": 20000,
-            "subtypes": [
-                {
-                    "id": 0,
-                    "name": "Стандарт",
-                    "minWeight": 0,
-                    "maxWeight": 10000
-                },
-                {
-                    "id": 1,
-                    "name": "Нестандарт",
-                    "minWeight": 10001,
-                    "maxWeight": 20000
-                }
-            ]
+          "id": 0,
+          "name": "Стандарт",
+          "minWeight": 0,
+          "maxWeight": 10000
         },
         {
-            "id": 1,
-            "name": "EMS",
-            "isInternational": false,
-            "maxWeight": 30000,
-            "subtypes": [
-                {
-                    "id": 2,
-                    "name": "Обыкновенное",
-                    "minWeight": 0,
-                    "maxWeight": 5000
-                },
-                {
-                    "id": 3,
-                    "name": "Оптимальное",
-                    "minWeight": 0,
-                    "maxWeight": 30000
-                }
-            ]
+          "id": 1,
+          "name": "Нестандарт",
+          "minWeight": 10001,
+          "maxWeight": 20000
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "EMS",
+      "isInternational": false,
+      "maxWeight": 30000,
+      "subtypes": [
+        {
+          "id": 2,
+          "name": "Обыкновенное",
+          "minWeight": 0,
+          "maxWeight": 5000
         },
         {
-            "id": 2,
-            "name": "Международная посылка",
-            "isInternational": true,
-            "maxWeight": 10000,
-            "subtypes": null
+          "id": 3,
+          "name": "Оптимальное",
+          "minWeight": 0,
+          "maxWeight": 30000
         }
-        ,
-        {
-            "id": 3,
-            "name": "Международная EMS",
-            "isInternational": true,
-            "maxWeight": 20000,
-            "subtypes": null
-        }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Международная посылка",
+      "isInternational": true,
+      "maxWeight": 10000,
+      "subtypes": null
+    },
+    {
+      "id": 3,
+      "name": "Международная EMS",
+      "isInternational": true,
+      "maxWeight": 20000,
+      "subtypes": null
+    }
+  ],
+  "parcel": []
 }
