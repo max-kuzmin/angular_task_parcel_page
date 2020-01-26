@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexFieldComponent } from './index-field.component';
+import { BaseFieldComponent } from '../base-field/base-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('IndexFieldComponent', () => {
   let component: IndexFieldComponent;
@@ -8,7 +11,8 @@ describe('IndexFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IndexFieldComponent ]
+      declarations: [ IndexFieldComponent, BaseFieldComponent ],
+      imports: [ ReactiveFormsModule, HttpClientModule ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeightFieldComponent } from './weight-field.component';
+import { BaseFieldComponent } from '../base-field/base-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('WeightFieldComponent', () => {
   let component: WeightFieldComponent;
@@ -8,7 +11,8 @@ describe('WeightFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeightFieldComponent ]
+      declarations: [ WeightFieldComponent, BaseFieldComponent ],
+      imports: [ ReactiveFormsModule, HttpClientModule ]
     })
     .compileComponents();
   }));
