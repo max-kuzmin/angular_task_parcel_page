@@ -14,5 +14,6 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - yarn all_tests
-  - yarn build --prod --base-href $base_href
+  - yarn lint
+  - ng test --watch false --browsers ChromeHeadless
+  - ng build --prod

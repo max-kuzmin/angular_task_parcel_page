@@ -43,32 +43,32 @@ export class ParcelTypeFieldComponent extends ReusableForm<ParcelTypeFieldValues
     this.value = new ParcelTypeFieldValues();
   }
 
-  private get typeInvalid() {
+  get typeInvalid() {
     return this.form.controls.typeId.touched
       && this.form.controls.typeId.invalid;
   }
 
-  private get subTypeInvalid() {
+  get subTypeInvalid() {
     return this.form.controls.subTypeId.touched
       && this.form.controls.subTypeId.invalid
       && this.currentType
       && this.currentType.subtypes;
   }
 
-  private get currentType(): ParcelType {
+  get currentType(): ParcelType {
     return this.value.typeId
       ? this.allTypes[this.value.typeId]
       : null;
   }
 
-  private get avaliableTypes(): ParcelType[] {
+  get avaliableTypes(): ParcelType[] {
     return this.allTypes
       ? this.allTypes.filter((value, index, array) =>
         value.isInternational === this.isInternational && value.maxWeight >= this.weight)
       : null;
   }
 
-  private get avaliableSubtypes(): ParcelSubtype[] {
+  get avaliableSubtypes(): ParcelSubtype[] {
     return this.currentType && this.currentType.subtypes
       ? this.currentType.subtypes.filter((value, index, array) =>
         value.maxWeight >= this.weight && value.minWeight <= this.weight)
